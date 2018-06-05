@@ -6,3 +6,11 @@ vol-persistence/\.project
 vol-persistence/\.settings/
 
 vol-persistence/target/
+
+vol-web/\.settings/
+
+vol-web/target/
+
+vol-web/\.classpath
+
+vol-web/\.project
