@@ -19,7 +19,7 @@
 
 	<div class="container">
 		<fieldset>
-   			<legend><spring:message code="client.editEI.title"/></legend>
+   			<legend><spring:message code="client.editEI.form"/></legend>
 			<form:form modelAttribute="clientEI" action="saveEI" method="post">
 				<form:hidden class="form-control" path="id"/> 
 				<form:hidden class="form-control" path="version"/> 

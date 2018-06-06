@@ -19,7 +19,7 @@
 
 	<div class="container">
 		<fieldset>
-   			<legend><spring:message code="client.editCM.title"/></legend>
+   			<legend><spring:message code="client.editCM.form"/></legend>
 			<form:form modelAttribute="clientMoral" action="saveCM" method="post">
 				<form:hidden class="form-control" path="id"/> 
 				<form:hidden class="form-control" path="version"/> 
