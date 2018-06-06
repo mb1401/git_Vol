@@ -43,6 +43,9 @@
 
 		<a class="btn btn-info btn-md" href="<c:url value="/passager/add"/>"> <span
 			class="glyphicon glyphicon-plus"></span>
+			
+			<a class="btn btn-info btn-md" href="<c:url value="/home/"/>"> <span
+			class="glyphicon glyphicon-home"></span>
 		</a>
 	</div>
 </body>

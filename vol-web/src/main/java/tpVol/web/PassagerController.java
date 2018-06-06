@@ -69,5 +69,10 @@ public class PassagerController {
 	public String cancel() {
 		return "forward:list";
 	}
+	
+	@GetMapping("/returnHome")
+	public String returnHome() {
+		return "/home/";
+	}
 
 }
