@@ -24,6 +24,18 @@
 				 <div class="form-group">
 				<form:label path="prenom">Prénom:</form:label> <form:input type="text" class="form-control" path="prenom"/>
 				</div>
+				 <div class="form-group">
+				<form:label path="${passager.adresse.adresse}">Adresse:</form:label> <form:input type="text" class="form-control" path="${passager.adresse.adresse}"/>
+				 </div>
+				<div class="form-group">
+				<form:label path="${passager.adresse.codePostal}">Code Postal:</form:label> <form:input type="text" class="form-control" path="${passager.adresse.codePostal}"/>
+				 </div>
+				  <div class="form-group">
+				<form:label path="${passager.adresse.ville}">Ville:</form:label> <form:input type="text" class="form-control" path="${passager.adresse.ville}"/>
+				 </div>
+				  <div class="form-group">
+				<form:label path="${passager.adresse.pays}">Pays:</form:label> <form:input type="text" class="form-control" path="${passager.adresse.pays}"/>
+				 </div> 
 				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span></button>
 				<a href="<c:url value="/passager/cancel"/>" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span></a>
 			</form:form>
