@@ -17,23 +17,51 @@
 	<div class="container">
 		<fieldset>
    			<legend><spring:message code="vol.edit.title"/></legend>
-			<form:form modelAttribute="eleve" action="save" method="post">
+			<form:form modelAttribute="vol" action="save" method="post">
 				<form:hidden class="form-control" path="id"/> 
 				<form:hidden class="form-control" path="version"/> 
 				 <div class="form-group">
-				<form:label path="nom"><spring:message code="edit.nom"/></form:label> <form:input type="text" class="form-control" path="nom"/>
-				<form:errors path="nom"/></td>
+				<form:label path="dateDepart"><spring:message code="vol.edit.dateDepart"/></form:label> <form:input type="date" class="form-control" path="dateDepart"/>
+				<form:errors path="dateDepart"/></td>
 				 </div>
 				 <div class="form-group">
-				<form:label path="prenom"><spring:message code="edit.prenom"/></form:label> <form:input type="text" class="form-control" path="prenom"/>
-				<form:errors path="prenom"/></td>
+				<form:label path="dateArrivee"><spring:message code="vol.edit.dateArrivee"/></form:label> <form:input type="date" class="form-control" path="dateArrivee"/>
+				<form:errors path="dateArrivee"/></td>
 				</div>
 				 <div class="form-group">
-				<form:label path="age"><spring:message code="edit.age"/></form:label> <form:input type="number" class="form-control" path="age"/> 
-				<form:errors path="age"/></td>
+				<form:label path="heureDepart"><spring:message code="vol.edit.heureDepart"/></form:label> <form:input type="time" class="form-control" path="heureDepart"/> 
+				<form:errors path="heureDepart"/></td>
+				</div>
+				<div class="form-group">
+				<form:label path="heureArrivee"><spring:message code="vol.edit.heureArrivee"/></form:label> <form:input type="time" class="form-control" path="heureArrivee"/> 
+				<form:errors path="heureArrivee"/></td>
+				</div>
+				<div class="form-group">
+				<form:errors path="arrivee"/></td>
+				</div>
+				
+				<div class="form-group">
+				 <form:label for="sel1" path="depart"><spring:message code="vol.edit.depart"/></form:label>
+				      <select class="form-control" id="sel1">
+				      	<c:forEach items="${aeroports}" var="aeroport">
+				       	 <option>${aeroport.nom}</option>
+				        </c:forEach>
+				      </select>
+		 
+				<form:errors path="depart"/></td>
+				</div>
+				<div class="form-group">
+				 <form:label for="arrivee" path="depart"><spring:message code="vol.edit.depart"/></form:label>
+				      <select class="form-control" id="arrivee">
+				        <c:forEach items="${aeroports}" var="aeroport">
+				       	 <option>${aeroport.nom}</option>
+				        </c:forEach>
+				      </select>
+		 
+				<form:errors path="arrivee"/></td>
 				</div>
 				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span></button>
-				<a href="<c:url value="/eleve/cancel"/>" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span></a>
+				<a href="<c:url value="/vol/cancel"/>" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span></a>
 			</form:form>
 		</fieldset>
 	</div>
