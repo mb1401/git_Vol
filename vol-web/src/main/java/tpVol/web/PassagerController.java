@@ -3,15 +3,21 @@ package tpVol.web;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 
 import vol.model.Passager;
 import vol.repository.PassagerDao;
@@ -22,6 +28,7 @@ public class PassagerController {
 
 	@Autowired
 	private PassagerDao passagerDao;
+
 
 	@GetMapping("/")
 	public String home() {
@@ -41,7 +48,7 @@ public class PassagerController {
 	public ModelAndView add() {
 		return new ModelAndView("/passager/edit", "passager", new Passager());
 	}
-
+	@GetMapping("/edit")
 	public String edit(@RequestParam Long id, Model model) {
 		Optional<Passager> passager = passagerDao.findById(id);
 
@@ -54,12 +61,23 @@ public class PassagerController {
 	}
 
 	@PostMapping("/save")
-	public String save(@ModelAttribute("Passager") Passager passager) {
+	public String save(@Valid @ModelAttribute("Passager") Passager passager, BindingResult result) {
+		if (result.hasErrors()) {
+			System.out.println("Le passager n'a pas été validé ...");
+			return "/passager/edit";
+
+		}
 		passagerDao.save(passager);
 		return "redirect:list";
 
 	}
 
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		binder.addValidators(new PassagerSubscribeValidator());
+	}
+	
+	@GetMapping("/delete")
 	public String delete(@RequestParam Long id) {
 		passagerDao.deleteById(id);
 		return "forward:list";
