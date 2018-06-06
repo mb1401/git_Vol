@@ -25,20 +25,21 @@
 			<c:url var="reservationUrl" value="/reservation/" />
 			<c:url var="volUrl" value="/vol/" />
 			<c:url var="passagerUrl" value="/passager/" />
-			<li><a href="#tab1" ><spring:message
-						code="home.menu.home" /></a></li>
+			<c:url var="loginUrl" value="/login/" />
+			<li><a href="#tab1"><spring:message code="home.menu.home" /></a></li>
 			<li><a href="${clientUrl}"><spring:message
 						code="home.menu.client" /></a></li>
-			<li><a href="${reservationUrl}"/><spring:message
+			<li><a href="${reservationUrl}" /><spring:message
 						code="home.menu.reservation" /></a></li>
-			<li><a href="${volUrl}"><spring:message
-						code="home.menu.vol"/></a></li>
+			<li><a href="${volUrl}"><spring:message code="home.menu.vol" /></a></li>
 			<li><a href="${passagerUrl}"><spring:message
-						code="home.menu.passager"/></a></li>
-		
+						code="home.menu.passager" /></a></li>
+			<li><a href="${loginUrl}"><spring:message
+						code="home.menu.login" /></a></li>
 
 
-	<%-- 	<div class="tab-content">
+
+			<%-- 	<div class="tab-content">
 	<c:url var="clientUrl" value="/client/"/>
 	<c:url var="reservationUrl" value="/reservation/"/>
 	<c:url var="volUrl" value="/vol/"/>
