@@ -7,40 +7,40 @@
 <html>
 <head>
 
-<title>Edition Client Physique</title>
+<title><spring:message code="client.editCP.title"/></title>
 
 <meta charset="UTF-8">
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <script src="<c:url value="/js/jquery.min.js"/>"></script>
 <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
-<title>Edition Client Physique</title>
+<title><spring:message code="client.editCP.title"/></title>
 </head> 
 <body>
 
 	<div class="container">
 		<fieldset>
-   			<legend>Edition Client Physique</legend>
+   			<legend><spring:message code="client.editCP.title"/></legend>
 			<form:form modelAttribute="clientPhysique" action="saveCP" method="post">
 				<form:hidden class="form-control" path="id"/> 
 				<form:hidden class="form-control" path="version"/> 
 				 <div class="form-group">
-				<form:label path="nom">Nom:</form:label> <form:input type="text" class="form-control" path="nom"/>
+				<form:label path="nom"><spring:message code="client.editCP.nom"/></form:label> <form:input type="text" class="form-control" path="nom"/>
 				<form:errors path="nom" class="help-block"/>
 				 </div>
 				 <div class="form-group">
-				<form:label path="prenom">Prenom:</form:label> <form:input type="text" class="form-control" path="prenom"/>
+				<form:label path="prenom"><spring:message code="client.editCP.prenom"/></form:label> <form:input type="text" class="form-control" path="prenom"/>
 				<form:errors path="prenom" class="help-block"/>
 				</div>
 				 <div class="form-group">
-				<form:label path="numeroTel">numeroTel:</form:label> <form:input type="number" class="form-control" path="numeroTel"/> 
+				<form:label path="numeroTel"><spring:message code="client.editCP.numeroTel"/></form:label> <form:input type="number" class="form-control" path="numeroTel"/> 
 				<form:errors path="numeroTel" class="help-block"/>
 				</div>
 				 <div class="form-group">
-				<form:label path="numeroFax">numeroFax:</form:label> <form:input type="number" class="form-control" path="numeroFax"/> 
+				<form:label path="numeroFax"><spring:message code="client.editCP.numeroFax"/></form:label> <form:input type="number" class="form-control" path="numeroFax"/> 
 				<form:errors path="numeroFax" class="help-block"/>
 				</div>
 				 <div class="form-group">
-				<form:label path="email">email:</form:label> <form:input type="text" class="form-control" path="email"/>
+				<form:label path="email"><spring:message code="client.editCP.email"/></form:label> <form:input type="text" class="form-control" path="email"/>
 				<form:errors path="email" class="help-block"/>
 				</div>
 				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span></button>

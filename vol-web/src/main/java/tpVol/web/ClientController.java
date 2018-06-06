@@ -154,6 +154,10 @@ public class ClientController {
 	return "forward:list";
 	}
 	
+	@GetMapping("/returnHome")
+	public String returnHome() {
+		return "/home/";
+	}
 	
 	
 }
