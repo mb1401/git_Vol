@@ -23,7 +23,7 @@
 					<th>Adresse</th>
 					<th>Code Postal</th>
 					<th>Ville</th>
-					<td>Pays</td>
+					<th>Pays</th>
 					<th></th>
 				</tr>
 			</thead>
