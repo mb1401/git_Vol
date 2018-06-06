@@ -35,10 +35,13 @@
 						<td>${ereservation.id}</td>
 						<td>${reservation.date}</td>
 						<td>${reservation.numero}</td>
+						<td><a class="btn btn-primary btn-xs" href="${editUrl}"><span class="glyphicon glyphicon-pencil"></span></a><a class="btn btn-danger btn-xs" href="${deleteUrl}"><span class="glyphicon glyphicon-trash"></span></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		<a class="btn btn-info btn-md" href="<c:url value="/reservation/add"/>"> <span class="glyphicon glyphicon-plus"></span> </a>
 	</div>
 </body>
 </html>
+
