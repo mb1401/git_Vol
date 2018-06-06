@@ -9,18 +9,18 @@
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <script src="<c:url value="/js/jquery.min.js"/>"></script>
 <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
-<title>Liste des réservations</title>
+<title><spring:message code="reservation.list.title"/></title>
 </head>
 <body>
 
 	<div class="container">
-		<h2>Liste des réservations</h2>
+		<h2><spring:message code="reservation.list.title"/></h2>
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>
-					<th>Date</th>
-					<th>Numero</th>
+					<th><spring:message code="reservation.list.id"/></th>
+					<th><spring:message code="reservation.list.date"/></th>
+					<th><spring:message code="reservation.list.numero"/></th>
 				</tr>
 			</thead>
 			<tbody>

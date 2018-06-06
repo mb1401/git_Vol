@@ -10,22 +10,22 @@
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <script src="<c:url value="/js/jquery.min.js"/>"></script>
 <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
-<title> Edition des réservations </title>
+<title> <spring:message code="reservation.edit.title"/></title>
 </head>
 <body>
 
 	<div class="container">
 		<fieldset>
-   			<legend>Edition des réservations</legend>
+   			<legend><spring:message code="reservation.edit.form"/></legend>
 			<form:form modelAttribute="reservation" action="save" method="post">
 				<form:hidden class="form-control" path="id"/> 
 				<form:hidden class="form-control" path="version"/> 
 				 <div class="form-group">
-				<form:label path="date">date:</form:label> <form:input type="text" class="form-control" path="date"/>
+				<form:label path="date"><spring:message code="reservation.edit.date"/></form:label> <form:input type="date" class="form-control" path="date"/>
 				<form:errors path="date" class="help-block"/>
 				 </div>
 				 <div class="form-group">
-				<form:label path="numero">numero:</form:label> <form:input type="text" class="form-control" path="numero"/>
+				<form:label path="numero"><spring:message code="reservation.edit.numero"/></form:label> <form:input type="text" class="form-control" path="numero"/>
 				<form:errors path="numero" class="help-block"/>
 				</div>
 				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span></button>
