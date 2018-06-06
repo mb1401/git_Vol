@@ -19,7 +19,7 @@
 
 	<div class="container">
 		<fieldset>
-   			<legend><spring:message code="client.editCP.from"/></legend>
+   			<legend><spring:message code="client.editCP.form"/></legend>
 			<form:form modelAttribute="clientPhysique" action="saveCP" method="post">
 				<form:hidden class="form-control" path="id"/> 
 				<form:hidden class="form-control" path="version"/> 

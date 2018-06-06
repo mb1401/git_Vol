@@ -11,7 +11,8 @@
 <script src="<c:url value="/js/bootstrap.min.js"/>"></script>
 <title><spring:message code="home.title" /></title>
 </head>
-<body>
+
+<body background ="<c:url value="/img/Avion.jpg"/>" style="width : 100%">
 
 	<div class="container">
 		<h1>
@@ -33,9 +34,9 @@
 						code="home.menu.reservation" /></a></li>
 			<li><a href="${volUrl}"><spring:message code="home.menu.vol" /></a></li>
 			<li><a href="${passagerUrl}"><spring:message
-						code="home.menu.passager" /></a></li>
-			<li><a href="${loginUrl}"><spring:message
-						code="home.menu.login" /></a></li>
+						</ul>
+						code="home.menu.passager"/></a></li>
+		</div>
 
 
 
