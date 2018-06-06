@@ -5,24 +5,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
-	<script src="<c:url value="/js/jquery.min.js"/>"></script>
-	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
-	<title><spring:message code="home.title"/></title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
+<script src="<c:url value="/js/jquery.min.js"/>"></script>
+<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
+<title><spring:message code="home.title" /></title>
 </head>
 <body>
-	<h1><spring:message code="home.pagetitle"/></h1>
 
 	<div class="container">
-	  <h3><spring:message code="home.welcome"/></h3>
-	  <ul class="list-inline">
-	    <li><a href="#"><spring:message code="home.menu.home"/></a></li>
-	    <li><a href="#"><spring:message code="home.menu.client"/></a></li>
-	    <li><a href="#"><spring:message code="home.menu.reservation"/></a></li>
-	    <li><a href="#"><spring:message code="home.menu.vol"/></a></li>
-	    <li><a href="#"><spring:message code="home.menu.passager"/></a></li>
-	  </ul>
-	</div>
+		<h1>
+			<spring:message code="home.pagetitle" />
+		</h1>
+		<h3>
+			<spring:message code="home.welcome" />
+		</h3>
+		<ul class="list-inline col-li">
+			<c:url var="clientUrl" value="/client/" />
+			<c:url var="reservationUrl" value="/reservation/" />
+			<c:url var="volUrl" value="/vol/" />
+			<c:url var="passagerUrl" value="/passager/" />
+			<li><a href="#tab1" ><spring:message
+						code="home.menu.home" /></a></li>
+			<li><a href="${clientUrl}"><spring:message
+						code="home.menu.client" /></a></li>
+			<li><a href="${reservationUrl}"/><spring:message
+						code="home.menu.reservation" /></a></li>
+			<li><a href="${volUrl}"><spring:message
+						code="home.menu.vol"/></a></li>
+			<li><a href="${passagerUrl}"><spring:message
+						code="home.menu.passager"/></a></li>
+		
+
+
+	<%-- 	<div class="tab-content">
+	<c:url var="clientUrl" value="/client/"/>
+	<c:url var="reservationUrl" value="/reservation/"/>
+	<c:url var="volUrl" value="/vol/"/>
+	<c:url var="passagerUrl" value="/passager/"/>
+		<div class="tab-pane active" id="tab2">
+			<iframe src="${clientUrl}"></iframe>
+		</div>
+		<div class="tab-pane active" id="tab2">
+			<iframe src="${reservationUrl}"></iframe>
+		</div>
+		<div class="tab-pane active" id="tab2">
+			<iframe src="${volUrl}"></iframe>
+		</div>
+		<div class="tab-pane active" id="tab2">
+			<iframe src="${passagerUrl}"></iframe>
+		</div>
+	
+	</div> --%>
 </body>
 </html>

@@ -12,6 +12,9 @@ public class HomeController {
 	public String home() {
 		return "accueil";
 	}
-
+	@GetMapping("/reservation/")
+	public String reservation() {
+		return "redirect:/reservation/list/";
+	}
 	
 }
