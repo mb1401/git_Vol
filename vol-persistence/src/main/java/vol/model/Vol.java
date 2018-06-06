@@ -16,11 +16,14 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="Vol")
 public class Vol {
 
 	private Long id;
+	
 	private Date dateDepart;
 	private Date dateArrivee;
 	private Date heureDepart;
@@ -46,6 +49,7 @@ public class Vol {
 
 	@Column(name="date_depart")
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	public Date getDateDepart() {
 		return dateDepart;
 	}
@@ -56,6 +60,7 @@ public class Vol {
 
 	@Column(name="date_arrivee")
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	public Date getDateArrivee() {
 		return dateArrivee;
 	}
@@ -66,6 +71,7 @@ public class Vol {
 
 	@Column(name="heure_depart")
 	@Temporal(TemporalType.TIME)
+	@DateTimeFormat(pattern = "hh:mm")
 	public Date getHeureDepart() {
 		return heureDepart;
 	}
@@ -76,6 +82,7 @@ public class Vol {
 
 	@Column(name="heure_arrivee")
 	@Temporal(TemporalType.TIME)
+	@DateTimeFormat(pattern = "hh:mm")
 	public Date getHeureArrivee() {
 		return heureArrivee;
 	}

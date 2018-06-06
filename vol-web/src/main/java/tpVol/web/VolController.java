@@ -29,7 +29,7 @@ public class VolController {
 	@Autowired
 	private AeroportDao aeroportDao;
 		
-	@GetMapping("/list")
+	@GetMapping({"/list","/"})
 	public String list(Model model) {
 		List<Vol> listeVol = volDao.findAllWithVol();
 		
@@ -67,10 +67,13 @@ public class VolController {
 	}
 
 	@PostMapping("/save")
-	public String save(@Valid @ModelAttribute("vol") Vol vol, BindingResult result) {
+	public String save(@Valid @ModelAttribute("vol") Vol vol, BindingResult result,Model model) {
+		
 		if(result.hasErrors()) {
 			System.out.println("Le vol n'a pas été validé");
-			
+			List<Aeroport> listeAeroport = aeroportDao.findAll();
+			System.out.println(listeAeroport.toString());
+			model.addAttribute("aeroports", listeAeroport);
 			return "/vol/edit";
 		}
 		volDao.save(vol);

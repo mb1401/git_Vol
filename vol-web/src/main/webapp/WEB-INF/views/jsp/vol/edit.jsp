@@ -51,7 +51,7 @@
 				<form:errors path="depart"/></td>
 				</div>
 				<div class="form-group">
-				 <form:label for="arrivee" path="depart"><spring:message code="vol.edit.depart"/></form:label>
+				 <form:label for="arrivee" path="arrivee"><spring:message code="vol.edit.depart"/></form:label>
 				      <select class="form-control" id="arrivee">
 				        <c:forEach items="${aeroports}" var="aeroport">
 				       	 <option>${aeroport.nom}</option>
