@@ -29,9 +29,10 @@ public class VolController {
 	@Autowired
 	private AeroportDao aeroportDao;
 		
-	@GetMapping({"/list","/"})
+	@GetMapping({"/list","/",""})
 	public String list(Model model) {
 		List<Vol> listeVol = volDao.findAllWithVol();
+		System.out.println(listeVol.toString());
 		
 		
 
@@ -55,7 +56,7 @@ public class VolController {
 		List<Aeroport> listeAeroport = aeroportDao.findAll();
 		System.out.println(listeAeroport.toString());
 		model.addAttribute("aeroports", listeAeroport);
-		Optional<Vol> vol = volDao.findById(id);
+		Optional<Vol> vol = volDao.findByIdWithVol(id);
 
 		if (vol.isPresent()) {
 			model.addAttribute("vol", vol.get());

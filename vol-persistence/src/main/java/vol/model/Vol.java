@@ -49,7 +49,7 @@ public class Vol {
 
 	@Column(name="date_depart")
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	public Date getDateDepart() {
 		return dateDepart;
 	}
@@ -60,7 +60,7 @@ public class Vol {
 
 	@Column(name="date_arrivee")
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	public Date getDateArrivee() {
 		return dateArrivee;
 	}
