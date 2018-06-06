@@ -61,8 +61,8 @@ public class PassagerController {
 	}
 
 	@PostMapping("/save")
-	public String save(@Valid @ModelAttribute("Passager") Passager passager, BindingResult result) {
-		if (result.hasErrors()) {
+	public String save(@Valid @ModelAttribute("passager") Passager passager, BindingResult result, Model model) {
+		if (result.hasErrors()) {		
 			System.out.println("Le passager n'a pas été validé ...");
 			return "/passager/edit";
 
