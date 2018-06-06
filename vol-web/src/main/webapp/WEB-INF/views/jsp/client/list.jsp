@@ -31,7 +31,7 @@
 					<c:url var="editUrl" value="/client/edit">
 						<c:param name="id">${client.id}</c:param>
 					</c:url>
-					<c:url var="deleteUrl" value="/eleve/delete">
+					<c:url var="deleteUrl" value="/client/delete">
 						<c:param name="id">${client.id}</c:param>
 					</c:url>
 					<tr>

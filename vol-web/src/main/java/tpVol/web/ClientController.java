@@ -92,39 +92,68 @@ public class ClientController {
 	}
 
 	@PostMapping("/saveCP")
-	public String saveCP(@ModelAttribute("clientPhysique") ClientPhysique clientPhysique) {
+	public String saveCP(@Valid @ModelAttribute("clientPhysique") ClientPhysique clientPhysique, BindingResult result, Model model) {
+		new ClientPhysiqueSubscribeValidator().validate(clientPhysique, result);
 
-		
+		if (result.hasErrors()) {
+			System.out.println("Le client physique n'a pas été validé ...");
+			return "/client/editCP";
+			}
+
 		clientDao.save(clientPhysique);
 		return "redirect:list";
 	}
 
 	@PostMapping("/saveCM")
-	public String saveCM(@ModelAttribute("clientMoral") ClientMoral clientMoral) {
-
+	public String saveCM(@Valid @ModelAttribute("clientMoral") ClientMoral clientMoral, BindingResult result, Model model) {
+		new ClientMoralSubscribeValidator().validate(clientMoral, result);
+		if (result.hasErrors()) {
+			System.out.println("Le client moral n'a pas été validé ...");
+			return "/client/editCM";
+			}
 		
 		clientDao.save(clientMoral);
 		return "redirect:list";
 	}
 
 	@PostMapping("/saveEI")
-	public String saveEI(@ModelAttribute("clientEI") ClientEI clientEI) {
-
+	public String saveEI(@Valid @ModelAttribute("clientEI") ClientEI clientEI, BindingResult result, Model model) {
+		new ClientEISubscribeValidator().validate(clientEI, result);
+		if (result.hasErrors()) {
+			System.out.println("Le client EI n'a pas été validé ...");
+			return "/client/editEI";
+			}
 	
 		clientDao.save(clientEI);
 		return "redirect:list";
 	}
+	
 	@PostMapping("/save")
-	public String save(@ModelAttribute("client") Client client) {
-
+	public String save(@Valid @ModelAttribute("client") Client client , BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			System.out.println("Le client n'a pas été validé ...");
+			return "edit";
+			}
 		
 		clientDao.save(client);
 
 		return "redirect:list";
 	}
+	
+	
+	@GetMapping("/delete")
+	public String delete(@RequestParam Long id) {
+
+		clientDao.deleteById(id);
+
+		return "forward:list";
+	}
 
 	@GetMapping("/cancel")
 	public String cancel() {
-		return "forward:list";
+	return "forward:list";
 	}
+	
+	
+	
 }
