@@ -20,6 +20,10 @@
 					<th>Identifiant</th>
 					<th>Nom</th>
 					<th>Prénom</th>
+					<th>Adresse</th>
+					<th>Code Postal</th>
+					<th>Ville</th>
+					<td>Pays</td>
 					<th></th>
 				</tr>
 			</thead>
@@ -35,6 +39,10 @@
 						<td>${passager.id}</td>
 						<td>${passager.nom}</td>
 						<td>${passager.prenom}</td>
+						<td>${passager.adresse.adresse}</td>
+						<td>${passager.adresse.codePostal}</td>
+						<td>${passager.adresse.ville}</td>
+						<td>${passager.adresse.pays}</td>
 						<td><a class="btn btn-primary btn-xs" href="${editUrl}"><span class="glyphicon glyphicon-pencil"></span></a><a class="btn btn-danger btn-xs" href="${deleteUrl}"><span class="glyphicon glyphicon-trash"></span></a></td>
 					</tr>
 				</c:forEach>
