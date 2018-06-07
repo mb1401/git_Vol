@@ -33,9 +33,9 @@
 			<li><a href="${reservationUrl}" /><spring:message
 						code="home.menu.reservation" /></a></li>
 			<li><a href="${volUrl}"><spring:message code="home.menu.vol" /></a></li>
-			<li><a href="${passagerUrl}"><spring:message
+			<li><a href="${passagerUrl}"><spring:messagecode="home.menu.passager"/></a></li>
 						</ul>
-						code="home.menu.passager"/></a></li>
+						
 		</div>
 
 

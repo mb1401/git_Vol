@@ -57,6 +57,9 @@
 		<a class="btn btn-info btn-md" href="<c:url value="/vol/add"/>"> <span
 			class="glyphicon glyphicon-plus"></span>
 		</a>
+		<a class="btn btn-info btn-md" href="<c:url value="/home/"/>"> <span
+			class="glyphicon glyphicon-home"></span>
+		</a>
 	</div>
 </body>
 </html>
